@@ -107,6 +107,15 @@ public class StudentServiceImpl implements StudentService {
         Student student = studentRepository.findById(id).get();
         Student studentUpdated = studentMapper.updateStudentFromDto(dto, student);
         return new ResponseEntity<>(studentRepository.save(studentUpdated), HttpStatus.OK);
+    }
+
+    //con Dto Request con mapper MapStruct
+    @Override
+    public ResponseEntity<Student> updateStudentProfileWithDtoAndMapStruct(int id, UpdateStudentProfile dto) {
+        Student student = studentRepository.findById(id).get();
+        studentMapperMapStruct.updateStudentFromDto(dto, student);
+        Student updatedStudent = studentRepository.save(student);
+        return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
     }  
 
     

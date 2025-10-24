@@ -25,4 +25,5 @@ public interface StudentService {
     //UPDATE STUDENT BY ID
     ResponseEntity<Student> updateStudentProfileWithDto(int id, UpdateStudentProfile updatedStudent);
     ResponseEntity<Student> updateStudentProfileWithDtoAndMapper(int id, UpdateStudentProfile updatedStudent);
+    ResponseEntity<Student> updateStudentProfileWithDtoAndMapStruct(int id, UpdateStudentProfile dto);
 }

@@ -98,4 +98,9 @@ public class StudentController {
     }
 
     //con DTO Resquest con mapper MapStruct
+    @PutMapping("/student/mapstruct/{id}")
+    public ResponseEntity<Student> updateProfileWithDtoAndMapStruct(@PathVariable int id, @Valid @RequestBody UpdateStudentProfile updateStudent) {
+        return studentService.updateStudentProfileWithDtoAndMapStruct(id, updateStudent);
+    }
+    
 }
