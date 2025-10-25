@@ -15,4 +15,4 @@ The university needs the list of students, so only the first and last names can 
 - h2 console
 
 ### Resources
-Part II
+[Part II](https://github.com/MAlexGG/dtos-and-mappers-II)
