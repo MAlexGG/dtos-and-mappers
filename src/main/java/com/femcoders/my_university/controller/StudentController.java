@@ -85,8 +85,15 @@ public class StudentController {
 
 
     //UPDATE STUDENT BY ID ------------------------------------------
-    //con DTO Request sin mapper
+    //sin DTO
     @PutMapping("/student/{id}")
+    public ResponseEntity<Student> updateProfile(@PathVariable int id, @Valid @RequestBody Student student){
+        return studentService.updateStudentProfile(id, student);
+    }
+
+
+    //con DTO Request sin mapper
+    @PutMapping("/student/dto/{id}")
     public ResponseEntity<Student> updateProfileWithDto(@PathVariable int id, @Valid @RequestBody UpdateStudentProfile updatStudent){
         return studentService.updateStudentProfileWithDto(id, updatStudent);
     }

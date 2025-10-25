@@ -23,6 +23,7 @@ public interface StudentService {
     ResponseEntity<List<StudentsListDto>> getStudentsWithDtoAndMapStruct();
 
     //UPDATE STUDENT BY ID
+    ResponseEntity<Student> updateStudentProfile(int id, Student student);
     ResponseEntity<Student> updateStudentProfileWithDto(int id, UpdateStudentProfile updatedStudent);
     ResponseEntity<Student> updateStudentProfileWithDtoAndMapper(int id, UpdateStudentProfile updatedStudent);
     ResponseEntity<Student> updateStudentProfileWithDtoAndMapStruct(int id, UpdateStudentProfile dto);

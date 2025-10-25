@@ -1,4 +1,4 @@
-# DTOs & MAPPERS 
+# DTOs & MAPPERS, part I
 
 ## Context
 This is a simple API Rest developed with a MVC with 3-tier architecture.
@@ -12,5 +12,7 @@ The university needs the list of students, so only the first and last names can 
 ### Technologies
 - Java 21
 - Spring Boot 
+- h2 console
 
-
+### Resources
+Part II

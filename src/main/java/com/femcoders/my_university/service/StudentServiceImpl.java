@@ -92,12 +92,21 @@ public class StudentServiceImpl implements StudentService {
 
 
     //UPDATE STUDENT BY ID ------------------------------------------
+    //sin DTO
+    @Override
+    public ResponseEntity<Student> updateStudentProfile(int id, Student student) {
+        Student studentFounded = studentRepository.findById(id).get();
+        studentFounded.setPhone(student.getPhone());
+        studentFounded.setEmail(student.getEmail());
+        return new ResponseEntity<>(studentRepository.save(studentFounded), HttpStatus.OK);
+    } 
+
     //con Dto Request sin mapper
     @Override
-    public ResponseEntity<Student> updateStudentProfileWithDto(int id, UpdateStudentProfile updatedStudent){
+    public ResponseEntity<Student> updateStudentProfileWithDto(int id, UpdateStudentProfile dto){
         Student student = studentRepository.findById(id).get();
-        student.setPhone(updatedStudent.getPhone());
-        student.setEmail(updatedStudent.getEmail());
+        student.setPhone(dto.getPhone());
+        student.setEmail(dto.getEmail());
         return new ResponseEntity<>(studentRepository.save(student), HttpStatus.OK);
     }
 
@@ -116,8 +125,5 @@ public class StudentServiceImpl implements StudentService {
         studentMapperMapStruct.updateStudentFromDto(dto, student);
         Student updatedStudent = studentRepository.save(student);
         return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
-    }  
-
-    
-    
+    } 
 }
