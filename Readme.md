@@ -1,4 +1,4 @@
-# DTOs & MAPPERS, part I
+# :scissors: DTOs & MAPPERS, part I
 
 ## Context
 This is a simple API Rest developed with a MVC with 3-tier architecture.
